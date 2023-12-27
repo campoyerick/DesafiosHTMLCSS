@@ -1,0 +1,59 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #222;
+}
+
+.pisca-pisca {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.light {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 10px;
+  animation: pisca var(--speed, 1s) infinite;
+  background-color: var(--color, #ff0000);
+}
+
+.light:nth-child(2) {
+  animation-delay: calc(var(--speed, 1s) * 0.2);
+}
+
+.light:nth-child(3) {
+  animation-delay: calc(var(--speed, 1s) * 0.4);
+}
+
+.paused .light {
+  animation-play-state: paused;
+}
+
+/* Adicione mais estilos conforme necessário */
+
+@keyframes pisca {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+button {
+  background-color: #23e965;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
